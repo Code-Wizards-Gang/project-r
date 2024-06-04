@@ -9,28 +9,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\screens.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="projectr_entry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\raylib_game.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen_ending.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen_gameplay.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen_logo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen_options.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\screen_title.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
