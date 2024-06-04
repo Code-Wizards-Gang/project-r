@@ -27,10 +27,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2EB858A2-1A85-B3AD-439E-A1552FCAE83B}</ProjectGuid>
+    <ProjectGuid>{BBD9FD7C-2744-B2F3-7082-6399DC2B9048}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ProjectR</RootNamespace>
+    <RootNamespace>project-r</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -97,42 +97,42 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug\</OutDir>
     <IntDir>obj\x64\Debug\</IntDir>
-    <TargetName>ProjectR</TargetName>
+    <TargetName>project-r</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug\</OutDir>
     <IntDir>obj\x86\Debug\</IntDir>
-    <TargetName>ProjectR</TargetName>
+    <TargetName>project-r</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug\</OutDir>
     <IntDir>obj\ARM64\Debug\</IntDir>
-    <TargetName>ProjectR</TargetName>
+    <TargetName>project-r</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release\</OutDir>
     <IntDir>obj\x64\Release\</IntDir>
-    <TargetName>ProjectR</TargetName>
+    <TargetName>project-r</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release\</OutDir>
     <IntDir>obj\x86\Release\</IntDir>
-    <TargetName>ProjectR</TargetName>
+    <TargetName>project-r</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release\</OutDir>
     <IntDir>obj\ARM64\Release\</IntDir>
-    <TargetName>ProjectR</TargetName>
+    <TargetName>project-r</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
