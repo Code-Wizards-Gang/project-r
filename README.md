@@ -2,7 +2,7 @@
 
 Work in progress...
 
-## Acknowledgements
+## Technlogies & libs
 
  - [C++](https://cplusplus.com)
  - [Raylib](https://www.raylib.com/index.html)
