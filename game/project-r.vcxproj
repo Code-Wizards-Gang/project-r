@@ -273,8 +273,13 @@
     <ClInclude Include="src\public\Game.h" />
     <ClInclude Include="src\public\GameTypes.h" />
     <ClInclude Include="src\public\ObjectBase.h" />
+    <ClInclude Include="src\public\Screen.h" />
+    <ClInclude Include="src\public\ScreenManager.h" />
+    <ClInclude Include="src\public\TitleScreen.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\private\ScreenManager.cpp" />
+    <ClCompile Include="src\private\TitleScreen.cpp" />
     <ClCompile Include="src\private\Game.cpp" />
     <ClCompile Include="src\projectr_entry.cpp" />
   </ItemGroup>
