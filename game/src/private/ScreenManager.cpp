@@ -33,6 +33,13 @@ void ScreenManager::Update() {
 		if (activeScreen->IsFinished()) {
 			// Add logic to change screens
 			// e.g. ChangeScreen(GameScreen::TITLE); tia capté
+			switch(currentScreen) {
+				case GameScreen::TITLE:
+					ChangeScreen(GameScreen::TITLE);
+					break;
+				default:
+					break;
+			}
 		}
 	}
 }
