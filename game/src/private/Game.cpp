@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "ScreenManager.h"
 #include "raylib.h"
 #include "string"
 #include "ObjectBase.h"
@@ -16,7 +17,21 @@ void Game::Init()
 
 void Game::Run()
 {
+	ScreenManager screenManager;
+	screenManager.ChangeScreen(GameScreen::TITLE);
+
 	while (!WindowShouldClose())
+	{
+		screenManager.Update();
+
+		BeginDrawing();
+		ClearBackground(BEIGE);
+
+		DrawText(std::to_string(GetFPS()).c_str(), 30, 20, 24, RED);
+
+		screenManager.Draw();
+		EndDrawing();
+	}
 	{
 		BeginDrawing();
 		ClearBackground(BEIGE);
