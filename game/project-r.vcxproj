@@ -276,11 +276,14 @@
     <ClInclude Include="src\public\Screen.h" />
     <ClInclude Include="src\public\ScreenManager.h" />
     <ClInclude Include="src\public\TitleScreen.h" />
+    <ClInclude Include="src\public\UI\Label.h" />
+    <ClInclude Include="src\public\UI\UITypes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\private\ScreenManager.cpp" />
     <ClCompile Include="src\private\TitleScreen.cpp" />
     <ClCompile Include="src\private\Game.cpp" />
+    <ClCompile Include="src\private\UI\Label.cpp" />
     <ClCompile Include="src\projectr_entry.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

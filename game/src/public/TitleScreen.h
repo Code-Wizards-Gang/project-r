@@ -2,9 +2,14 @@
 #define LOGOSCREEN_H
 
 #include "Screen.h"
+#include "UI\Label.h"
+#include <memory>
+
 
 class TitleScreen : public Screen {
 public:
+	TitleScreen();
+
 	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Draw() override;
@@ -12,7 +17,16 @@ public:
 	virtual bool IsFinished() const override;
 
 private:
-	bool finished;
+	void AddLetter();
+
+private:
+	bool m_finished = false;
+	const char* m_title = "Project-R";
+	std::unique_ptr<Label> m_titleLabel;
+
+	int m_framesCounter = 0;
+	float m_letterSpeed = 0.5f; // Letter apparition in seconds
+	float m_totalTime = 0.f;
 };
 
 #endif // LOGOSCREEN_H

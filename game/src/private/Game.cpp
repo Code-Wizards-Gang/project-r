@@ -32,14 +32,6 @@ void Game::Run()
 		screenManager.Draw();
 		EndDrawing();
 	}
-	{
-		BeginDrawing();
-		ClearBackground(BEIGE);
-
-		DrawText(std::to_string(GetFPS()).c_str(), 30, 20, 24, RED);
-
-		EndDrawing();
-	}
 
 	CloseWindow();
 }

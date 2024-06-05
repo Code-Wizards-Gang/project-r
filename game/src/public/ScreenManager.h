@@ -3,10 +3,9 @@
 
 #include <unordered_map>
 #include <memory>
-#include "Screen.h"
+#include "GameTypes.h"
 
-enum class GameScreen {UNKNOWN = -1, LOGO = 0, TITLE, OPTIONS, GAMEPLAY};
-
+class Screen;
 
 class ScreenManager {
 public:
@@ -18,9 +17,9 @@ public:
 	void Draw();
 
 private:
-	std::unordered_map<GameScreen, std::unique_ptr<Screen>> screens;
-	GameScreen currentScreen;
-	Screen* activeScreen;
+	std::unordered_map<GameScreen, std::unique_ptr<Screen>> m_screens;
+	GameScreen m_currentScreen;
+	Screen* m_activeScreen;
 
 	void LoadScreens();
 };

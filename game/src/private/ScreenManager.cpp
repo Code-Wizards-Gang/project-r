@@ -1,51 +1,50 @@
 #include "ScreenManager.h"
 #include "TitleScreen.h"
 
-ScreenManager::ScreenManager() : currentScreen(GameScreen::UNKNOWN), activeScreen(nullptr) {
+ScreenManager::ScreenManager() : m_currentScreen(GameScreen::UNKNOWN), m_activeScreen(nullptr) {
 	LoadScreens();
 }
 
 ScreenManager::~ScreenManager() {
-	if (activeScreen) {
-		activeScreen->Unload();
+	if (m_activeScreen) {
+		m_activeScreen->Unload();
 	}
 }
 
 void ScreenManager::LoadScreens() {
-	screens[GameScreen::TITLE] = std::make_unique<TitleScreen>();
+	m_screens[GameScreen::TITLE] = std::make_unique<TitleScreen>();
 }
 
 void ScreenManager::ChangeScreen(GameScreen screen) {
-	if (activeScreen) {
-		activeScreen->Unload();
+	if (m_activeScreen) {
+		m_activeScreen->Unload();
 	}
 
-	currentScreen = screen;
-	activeScreen = screens[currentScreen].get();
-	if (activeScreen) {
-		activeScreen->Init();
+	m_currentScreen = screen;
+	m_activeScreen = m_screens[m_currentScreen].get();
+	if (m_activeScreen) {
+		m_activeScreen->Init();
 	}
 }
 
 void ScreenManager::Update() {
-	if (activeScreen) {
-		activeScreen->Update();
-		if (activeScreen->IsFinished()) {
-			// Add logic to change screens
-			// e.g. ChangeScreen(GameScreen::TITLE); tia capté
-			switch(currentScreen) {
+	if (m_activeScreen) {
+		m_activeScreen->Update();
+		if (m_activeScreen->IsFinished()) {
+			ChangeScreen(m_currentScreen);
+			/*switch(m_currentScreen) {
 				case GameScreen::TITLE:
 					ChangeScreen(GameScreen::TITLE);
 					break;
 				default:
 					break;
-			}
+			}*/
 		}
 	}
 }
 
 void ScreenManager::Draw() {
-	if (activeScreen) {
-		activeScreen->Draw();
+	if (m_activeScreen) {
+		m_activeScreen->Draw();
 	}
 }
