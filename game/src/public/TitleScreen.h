@@ -22,10 +22,12 @@ private:
 private:
 	bool m_finished;
 	const char* m_title = "Project-R";
+	const char* m_prompt = "Click or press enter to continue";
 	std::unique_ptr<Label> m_titleLabel;
+	std::unique_ptr<Label> m_promptLabel;
 
 	int m_framesCounter = 0;
-	float m_letterSpeed = 0.5f; // Letter apparition in seconds
+	float m_letterSpeed = 0.3f; // Letter apparition in seconds
 	float m_totalTime = 0.f;
 };
 
