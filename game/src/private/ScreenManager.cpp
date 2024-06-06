@@ -32,13 +32,6 @@ void ScreenManager::Update() {
 		m_activeScreen->Update();
 		if (m_activeScreen->IsFinished()) {
 			ChangeScreen(m_currentScreen);
-			/*switch(m_currentScreen) {
-				case GameScreen::TITLE:
-					ChangeScreen(GameScreen::TITLE);
-					break;
-				default:
-					break;
-			}*/
 		}
 	}
 }

@@ -1,19 +1,23 @@
 #include "TitleScreen.h"
 #include "raylib.h"
 
-TitleScreen::TitleScreen() :
-	m_titleLabel(std::make_unique<Label>())
+TitleScreen::TitleScreen():
+	m_titleLabel(std::make_unique<Label>()),
+	m_finished(false)
 {
+
+}
+
+void TitleScreen::Init() {
+	m_finished = false;
+	m_titleLabel = std::make_unique<Label>();
+
 	FontSettings titleFont;
 	titleFont.FontColor = BLUE;
 	titleFont.FontSize = 80;
 
 	m_titleLabel->SetFont(titleFont);
-	m_titleLabel->SetPosition((GetScreenWidth()/2 - titleFont.FontSize/2 * strlen(m_title)/2) , GetScreenHeight()/2 - titleFont.FontSize/2);
-}
-
-void TitleScreen::Init() {
-	m_finished = false;
+	m_titleLabel->SetPosition((GetScreenWidth() / 2 - titleFont.FontSize / 2 * strlen(m_title) / 2), GetScreenHeight() / 2 - titleFont.FontSize / 2);
 }
 
 void TitleScreen::Update() {

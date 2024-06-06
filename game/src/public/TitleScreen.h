@@ -20,7 +20,7 @@ private:
 	void AddLetter();
 
 private:
-	bool m_finished = false;
+	bool m_finished;
 	const char* m_title = "Project-R";
 	std::unique_ptr<Label> m_titleLabel;
 

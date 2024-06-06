@@ -1,10 +1,10 @@
 #pragma once
 
 #include "GameTypes.h"
-#include <vector>
 #include <memory>
+#include "ScreenManager.h"
 
-class ObjectBase;
+class ScreenManager;
 
 class Game
 {
@@ -16,5 +16,5 @@ public:
 
 private:
 	WindowSettings m_Window;
-
+	std::unique_ptr<ScreenManager> m_screenManager;
 };

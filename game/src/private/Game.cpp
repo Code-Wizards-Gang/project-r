@@ -4,9 +4,10 @@
 #include "string"
 #include "ObjectBase.h"
 
-Game::Game()
+Game::Game():
+	m_screenManager(std::make_unique<ScreenManager>())
 {
-
+	
 }
 
 void Game::Init()
@@ -17,19 +18,18 @@ void Game::Init()
 
 void Game::Run()
 {
-	ScreenManager screenManager;
-	screenManager.ChangeScreen(GameScreen::TITLE);
+	m_screenManager->ChangeScreen(GameScreen::TITLE);
 
 	while (!WindowShouldClose())
 	{
-		screenManager.Update();
+		m_screenManager->Update();
 
 		BeginDrawing();
 		ClearBackground(BEIGE);
 
 		DrawText(std::to_string(GetFPS()).c_str(), 30, 20, 24, RED);
 
-		screenManager.Draw();
+		m_screenManager->Draw();
 		EndDrawing();
 	}
 
