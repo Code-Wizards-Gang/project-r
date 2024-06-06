@@ -28,7 +28,6 @@ void TitleScreen::Init() {
 
 	m_promptLabel->SetFont(promptFont);
 
-	// Measure the prompt text width and center it
 	Vector2 promptSize = MeasureTextEx(promptFont.FontFamily, m_prompt, promptFont.FontSize, promptFont.Spacing);
 	m_promptLabel->SetText(m_prompt);
 	m_promptLabel->SetPosition((int)(GetScreenWidth() - promptSize.x) / 2, GetScreenHeight() / 2 + 100);
