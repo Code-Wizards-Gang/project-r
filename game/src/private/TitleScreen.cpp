@@ -21,10 +21,10 @@ void TitleScreen::Init() {
 }
 
 void TitleScreen::Update() {
-	if (IsFinished()) {
-		m_finished = true;
-		return;
-	}
+	//if (IsFinished()) {
+	//	m_finished = true;
+	//	return;
+	//}
 
 	float deltaTime = GetFrameTime();
 	m_totalTime += deltaTime;
@@ -33,6 +33,10 @@ void TitleScreen::Update() {
 	{
 		AddLetter();
 		m_totalTime = 0;
+	}
+
+	if ((IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP)) && m_titleLabel->Length() == strlen(m_title)) {
+		m_finished = true;
 	}
 }
 
@@ -45,10 +49,13 @@ void TitleScreen::Unload() {
 }
 
 bool TitleScreen::IsFinished() const {
-	return m_titleLabel->Length() == strlen(m_title);
+	//return m_titleLabel->Length() == strlen(m_title);
+	return m_finished;
 }
 
 void TitleScreen::AddLetter()
 {
-	m_titleLabel->Append(m_title[m_titleLabel->Length()]);
+	if (m_titleLabel->Length() < strlen(m_title)) {
+		m_titleLabel->Append(m_title[m_titleLabel->Length()]);
+	}
 }
