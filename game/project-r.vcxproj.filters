@@ -39,6 +39,9 @@
     <ClInclude Include="src\public\UI\UITypes.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="src\public\GameplayScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\private\ScreenManager.cpp">
@@ -53,6 +56,9 @@
     <ClCompile Include="src\projectr_entry.cpp" />
     <ClCompile Include="src\private\UI\Label.cpp">
       <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\GameplayScreen.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

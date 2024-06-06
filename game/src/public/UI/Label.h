@@ -25,7 +25,6 @@ public:
     void Append(std::string text);
 
     int Length() const;
-
 protected:
     FontSettings m_font;
     std::string m_text;

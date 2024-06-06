@@ -3,6 +3,7 @@
 
 TitleScreen::TitleScreen():
 	m_titleLabel(std::make_unique<Label>()),
+	m_promptLabel(std::make_unique<Label>()),
 	m_finished(false)
 {
 
@@ -17,17 +18,26 @@ void TitleScreen::Init() {
 	titleFont.FontSize = 80;
 
 	m_titleLabel->SetFont(titleFont);
-	m_titleLabel->SetPosition((GetScreenWidth() / 2 - titleFont.FontSize / 2 * strlen(m_title) / 2), GetScreenHeight() / 2 - titleFont.FontSize / 2);
+
+	Vector2 titleSize = MeasureTextEx(titleFont.FontFamily, m_title, titleFont.FontSize, titleFont.Spacing);
+	m_titleLabel->SetPosition((GetScreenWidth() - titleSize.x) / 2, (GetScreenHeight() - titleSize.y) / 2);
+
+	FontSettings promptFont;
+	promptFont.FontColor = DARKGRAY;
+	promptFont.FontSize = 20;
+
+	m_promptLabel->SetFont(promptFont);
+
+	Vector2 promptSize = MeasureTextEx(promptFont.FontFamily, m_prompt, promptFont.FontSize, promptFont.Spacing);
+	m_promptLabel->SetText(m_prompt);
+	m_promptLabel->SetPosition((int)(GetScreenWidth() - promptSize.x) / 2, GetScreenHeight() / 2 + 100);
 }
 
 void TitleScreen::Update() {
-	if (IsFinished()) {
-		m_finished = true;
-		return;
-	}
-
+	m_finished = (IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP)) && m_titleLabel->Length() == strlen(m_title);
 	float deltaTime = GetFrameTime();
 	m_totalTime += deltaTime;
+
 
 	if (m_totalTime >= m_letterSpeed)
 	{
@@ -38,6 +48,9 @@ void TitleScreen::Update() {
 
 void TitleScreen::Draw() {
 	m_titleLabel->Draw();
+	if (m_titleLabel->Length() == strlen(m_title)) {
+		m_promptLabel->Draw();
+	}
 }
 
 void TitleScreen::Unload() {
@@ -45,10 +58,12 @@ void TitleScreen::Unload() {
 }
 
 bool TitleScreen::IsFinished() const {
-	return m_titleLabel->Length() == strlen(m_title);
+	return m_finished;
 }
 
 void TitleScreen::AddLetter()
 {
-	m_titleLabel->Append(m_title[m_titleLabel->Length()]);
+	if (m_titleLabel->Length() < strlen(m_title)) {
+		m_titleLabel->Append(m_title[m_titleLabel->Length()]);
+	}
 }
