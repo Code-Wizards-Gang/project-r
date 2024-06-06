@@ -34,17 +34,15 @@ void TitleScreen::Init() {
 }
 
 void TitleScreen::Update() {
+	m_finished = (IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP)) && m_titleLabel->Length() == strlen(m_title);
 	float deltaTime = GetFrameTime();
 	m_totalTime += deltaTime;
+
 
 	if (m_totalTime >= m_letterSpeed)
 	{
 		AddLetter();
 		m_totalTime = 0;
-	}
-
-	if ((IsKeyPressed(KEY_ENTER) || IsGestureDetected(GESTURE_TAP)) && m_titleLabel->Length() == strlen(m_title)) {
-		m_finished = true;
 	}
 }
 
