@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\public\Game.h">
+    <ClInclude Include="src\public\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\public\GameTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\public\ObjectBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\public\Screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\public\ScreenManager.h">
@@ -42,6 +39,15 @@
     <ClInclude Include="src\public\GameplayScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\public\Screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\public\Rectangle2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\private\ScreenManager.cpp">
@@ -50,7 +56,7 @@
     <ClCompile Include="src\private\TitleScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\private\Game.cpp">
+    <ClCompile Include="src\private\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\projectr_entry.cpp" />
@@ -58,6 +64,12 @@
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="src\private\GameplayScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\private\Rectangle2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

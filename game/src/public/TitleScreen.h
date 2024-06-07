@@ -13,6 +13,7 @@ public:
 	virtual void Init() override;
 	virtual void Update() override;
 	virtual void Draw() override;
+	virtual void DrawUI() override;
 	virtual void Unload() override;
 	virtual bool IsFinished() const override;
 
@@ -27,7 +28,7 @@ private:
 	std::unique_ptr<Label> m_promptLabel;
 
 	int m_framesCounter = 0;
-	float m_letterSpeed = 0.3f; // Letter apparition in seconds
+	float m_letterSpeed = 0.1f; // Letter apparition in seconds
 	float m_totalTime = 0.f;
 };
 

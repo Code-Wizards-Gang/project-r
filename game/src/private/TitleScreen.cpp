@@ -47,9 +47,13 @@ void TitleScreen::Update() {
 }
 
 void TitleScreen::Draw() {
-	m_titleLabel->Draw();
+}
+
+void TitleScreen::DrawUI()
+{
+	m_titleLabel->DrawUI();
 	if (m_titleLabel->Length() == strlen(m_title)) {
-		m_promptLabel->Draw();
+		m_promptLabel->DrawUI();
 	}
 }
 

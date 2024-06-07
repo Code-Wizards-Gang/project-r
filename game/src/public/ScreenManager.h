@@ -15,6 +15,7 @@ public:
 	void ChangeScreen(GameScreen screen);
 	void Update();
 	void Draw();
+	void DrawUI();
 
 private:
 	std::unordered_map<GameScreen, std::unique_ptr<Screen>> m_screens;
