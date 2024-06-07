@@ -1,5 +1,6 @@
 #include "ScreenManager.h"
 #include "TitleScreen.h"
+#include "GameplayScreen.h"
 
 ScreenManager::ScreenManager() : m_currentScreen(GameScreen::UNKNOWN), m_activeScreen(nullptr) {
 	LoadScreens();
@@ -13,6 +14,7 @@ ScreenManager::~ScreenManager() {
 
 void ScreenManager::LoadScreens() {
 	m_screens[GameScreen::TITLE] = std::make_unique<TitleScreen>();
+	m_screens[GameScreen::GAMEPLAY] = std::make_unique<GameplayScreen>();
 }
 
 void ScreenManager::ChangeScreen(GameScreen screen) {
@@ -31,7 +33,18 @@ void ScreenManager::Update() {
 	if (m_activeScreen) {
 		m_activeScreen->Update();
 		if (m_activeScreen->IsFinished()) {
-			ChangeScreen(m_currentScreen);
+			switch (m_currentScreen) {
+			case GameScreen::TITLE:
+				ChangeScreen(GameScreen::GAMEPLAY);
+				break;
+
+			case GameScreen::GAMEPLAY:
+				ChangeScreen(GameScreen::TITLE);
+				break;
+
+			default:
+				break;
+			}
 		}
 	}
 }
