@@ -8,3 +8,4 @@ Makefile
 obj
 *.user
 /game/project-r.vcxproj.user
+.vscode
