@@ -18,6 +18,10 @@ void Label::Update()
 
 void Label::Draw()
 {
+}
+
+void Label::DrawUI()
+{
 	DrawTextEx(m_font.FontFamily, m_text.c_str(), m_position, m_font.FontSize, m_font.Spacing, m_font.FontColor);
 }
 

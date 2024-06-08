@@ -270,7 +270,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\public\Game.h" />
+    <ClInclude Include="src\public\Rectangle2D.h" />
+    <ClInclude Include="src\public\Player.h" />
+    <ClInclude Include="src\public\Application.h" />
     <ClInclude Include="src\public\GameplayScreen.h" />
     <ClInclude Include="src\public\GameTypes.h" />
     <ClInclude Include="src\public\ObjectBase.h" />
@@ -281,10 +283,12 @@
     <ClInclude Include="src\public\UI\UITypes.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\private\Rectangle2D.cpp" />
+    <ClCompile Include="src\private\Player.cpp" />
     <ClCompile Include="src\private\GameplayScreen.cpp" />
     <ClCompile Include="src\private\ScreenManager.cpp" />
     <ClCompile Include="src\private\TitleScreen.cpp" />
-    <ClCompile Include="src\private\Game.cpp" />
+    <ClCompile Include="src\private\Application.cpp" />
     <ClCompile Include="src\private\UI\Label.cpp" />
     <ClCompile Include="src\projectr_entry.cpp" />
   </ItemGroup>

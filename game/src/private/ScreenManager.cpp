@@ -54,3 +54,10 @@ void ScreenManager::Draw() {
 		m_activeScreen->Draw();
 	}
 }
+
+void ScreenManager::DrawUI()
+{
+	if (m_activeScreen) {
+		m_activeScreen->DrawUI();
+	}
+}

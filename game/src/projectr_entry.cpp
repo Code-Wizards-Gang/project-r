@@ -1,9 +1,8 @@
-#include "Game.h"
+#include "Application.h"
 #include <iostream>
 
 int main()
 {
-	Game game;
-	game.Init();
-	game.Run();
+	Application application;
+	application.Run();
 }
